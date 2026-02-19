@@ -1,0 +1,37 @@
+.container-fulid{
+    background: linear-gradient(45deg, #0fc165, #ed16bf);
+    height: 100vh;
+    width: 100%;
+    /* overflow: hidden; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.container-fulid .container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-left: 100px;
+    
+    
+}
+.container .card .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -38px;
+    left: 45%;
+    border-radius: 100px;
+    background-color: #fff;
+    padding: 15px;
+    font-size: 1.3rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.card span{
+    font-size: 1rem;
+    color: red;
+}
+.card span i{
+    color: seagreen;
+    
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+
+    <div class="container-fulid">
+        <div class="row container">
+            <div class="col-12 col-sm-12 col-md-6">
+                <div class="card p-3 rounded-2 mt-5">
+                    <form action="">
+
+                        <i class="fa-solid fa-paper-plane mt-3 icon"></i>
+                
+                        <div class="form-group">
+                            <label for="" class="form-label mt-2">Full Name</label>
+                            <input type="text" placeholder="Enter your Name" id="username" class="form-control" onkeyup="validateName()">
+                            <span id="name-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="form-label mt-2">Mobile No</label>
+                            <input type="text" placeholder="000-000-000" id="mobile" class="form-control" onkeyup="validateMobile()">
+                            <span id="mobile-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="form-label mt-2">Email ID</label>
+                            <input type="email" placeholder="Enter your email" id="email" class="form-control" onkeyup="validateEmail()">
+                            <span id="email-error"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="" class="form-label mt-2">Message</label>
+                            <textarea placeholder="Write message" id="message" class="form-control" rows="5" cols="20" onkeyup="validateMessage()"></textarea>
+                            <span id="message-error" ></span>
+                        </div>
+
+                        <button class="btn btn-primary text-white mt-2 p-2 fs-6 w-100px
+                        " onclick="return validateForm()">Submit</button>
+                        <span id="submit-error"></span>
+                
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
