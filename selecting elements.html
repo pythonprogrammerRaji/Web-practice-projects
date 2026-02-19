@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selecting Elements</title>
+</head>
+<body>
+    <div>
+        <h1>Selecting Elements</h1>
+    </div>
+
+    <form>
+        <label for="username">Name:</label>
+        <input type="text" name="username" id="username" value="js">
+
+        <p class="msg">Javascript Dom 1</p>
+        <div class="container">
+            <p class="msg">Javascript Dom 2</p>
+            <p class="msg">Javascript Dom 3</p>
+        </div>
+
+
+        <button type="button">Javascript Dom 4</button>
+        <button type="button">Javascript Dom 5</button>
+        <button type="button">Javascript Dom 6</button>
+        <button type="button">Javascript Dom 7</button>
+       
+    </form>
+
+    <script>
+        // getElementById() Method => In this method we select the id of the Html Element
+
+        console.log("getElementById id='username'")
+
+        let Username = document.getElementById('username');
+        console.log(Username)
+
+        // getElementByName() Method => In this method we select the name of the Html Element
+        // its return the list of nodes
+
+        console.log("getElementByName name='username' ")
+
+        let username = document.getElementsByName('username');
+        console.log(username)
+
+
+        // getElementByTagName() Method accepts a tag name and return a live HtmlCollection of elements
+
+        console.log("getElementByTagName <p>Javascript Dom 1</p>")
+
+        let p = document.getElementsByTagName("p");
+        console.log(p)
+
+
+        // getElementByClassName() Method accepts return an array-like pf objects of the child elements with a specified class name
+
+        console.log("getElementByClassName class='msg' ")
+
+        let cont = document.getElementsByClassName('container');
+        console.log(cont)
+
+
+        // querySelector and querySelectorAll
+
+        // querySelector => This method allows you to select the first element that matches one or more CSS selector 
+        // => It select only one Elements
+        // => using querySelector we are select the class, id, tagname ect
+        // CSS selector
+        // Class (.) ->  let msg1 = document.querySelector('.msg');
+        // Id (#)-> let msg1 = document.querySelector('#msg');
+        // tagname -> let h1 = document.querySelector('h1');
+
+        console.log("querySelector")
+
+        let msg1 = document.querySelector('.msg');
+        console.log(msg1)
+
+        console.log("querySelectorAll") 
+
+        let button = document.querySelectorAll('button')
+        console.log(button)
+
+        let h1 = document.querySelectorAll('h1')
+        console.log(h1)
+
+
+
+    </script>
+</body>
+</html>

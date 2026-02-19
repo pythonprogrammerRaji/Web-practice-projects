@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+
+    <script>
+        // function
+
+
+        //SyntaxError
+
+        // function functionName(){
+        //     //code will be execute here
+        // }
+
+        // Ex
+
+        console.log("Function Example")
+
+        function sum(){
+            console.log("Hello World")
+        }
+        sum()
+
+
+        // Parameters and Arguments
+
+        console.log("Parameter and Argument Example")
+
+        function greet(firstName, lastName){
+            console.log("Hello " + firstName + " " 
+            + lastName)
+        }
+        greet("Aishu", "Raji")
+
+        // firstName and lastName => Parameters
+        // "Aishu", "Raji" => Arguments
+
+
+        // default parameter => b = 0
+
+        console.log("default parameter Example")
+
+        function add(a,b=0){
+            console.log(a+b) // 10 + undefined
+        }
+        add(10)
+
+
+        // Return Function
+
+        console.log(" Return Function Example")
+
+        function add1(x,y){
+            return x+y;
+        }
+        
+
+        let r = add1(10, 20)
+        console.log(r)
+
+        function fn1(x){
+            function fn2(y){
+                return x * y;
+            }
+            return fn2;
+        }
+        let r1 = fn1(3);
+        console.log(r1)
+        console.log(r1(2))
+
+
+
+        // CallBack function
+
+        console.log("CallBack function")
+
+         // Callbacks function => Callbacks function is a function passed the one
+        // function as argument to another function
+ 
+        // => A callback function can run after another function has finished.
+
+        // its a callback function => fn1
+
+        function display(result){
+            console.log(result)
+        }
+
+        function addition(num1, num2, myCallback){
+            let sum = num1 + num2;
+            myCallback(sum)
+        }
+
+        addition(10, 20, display) // here we give argument as fn1 name in myCallBack parameter
+
+
+
+
+        // Anonymous Function
+
+        console.log(" Anonymous Function Example")
+
+         let rr = function(x, y){
+            return x + y;
+        }
+
+        console.log(rr(200, 300))
+
+        setTimeout(function() {
+            console.log("Hi javascript")
+        }, 1000);
+        
+
+        (
+        function(a,b){
+            console.log("Hello Madam")
+
+        }
+        )();
+
+        // Recursive Function
+
+        console.log("Recursive function Example")
+
+        // function myFunction(){
+        //     myFunction();  // Its function call itself inside function called function called itself
+        // }
+        // myFunction();
+
+        // To print the number ascending order using Recursive function
+
+        function countDown(num){
+            console.log(num)
+            num--;
+            if(num>=0){
+                countDown(num) // in this function its a call the function itself
+            }
+            
+        }
+        countDown(10)
+
+        // // Callbacks function => Callbacks function is a function passed the one
+        // // function as argument to another function
+ 
+        // // => A callback function can run after another function has finished.
+
+        // // its a callback function => fn1
+        // function display(result){
+        //     console.log(result)
+        // }
+
+        // // => fn2
+        // function add(n1, n2, myCallBack){
+        //     let sum = n1 + n2;
+        //     myCallBack(sum)
+        // }
+        // add(10, 20, display) // here we give argument as fn1 name in myCallBack parameter
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <center><h2>Objects</h2></center>
+
+</body>
+
+    <script>
+        // There multiple way to declare the object
+
+        document.write("1. simple object")
+
+        const person = {
+            fName : "Hema",
+            LName : "Latha",
+            age : 19
+        }
+        document.write(person)
+        document.write("<hr>")
+
+        // Access the properties of an object
+        document.write("<h3>FirstName : ", person.fName ,"</h3>")
+        document.write("<h3>LastName : ", person.LName ,"</h3>")
+        document.write("<h3>Age : ", person.age ,"</h3>")
+        
+        document.write("<h3>FullName : " + person.fName, " " +person.LName + "</h3>")
+
+         // Update the property of object
+        document.write("<hr>")
+        document.write("Update the age is ", person.age)
+        person.age = "21"
+        
+       
+         // Add the property of object
+        document.write("<hr>")
+        document.write(" Add new properties in the object")
+        person.company = "Tesla";
+        document.write("<h3>Company is : ", person.company ,"</h3>")
+        console.log(person)
+
+
+        document.write("<hr>")
+        document.write("delete the properties age")
+        delete person.age
+        
+
+        console.log(person)
+
+        document.write("<hr>")
+
+        document.write("Nested object")
+
+        const Person = {
+            fName : "Rashmi",
+            LName : "Gowtham",
+            age : 28,
+            address : { 
+                city : "Hyderabad",
+                state : "Andhra Pradhes",
+                street : "Ballary Road",
+                Country : "India",
+                PinCode : 560345
+
+
+            }
+        }
+
+        // Access the properties of an object
+        document.write("<h3>FirstName : ", Person.fName ,"</h3>")
+        document.write("<h3>LastName : ", Person.LName ,"</h3>")
+        document.write("<h3>Age : ", Person.age ,"</h3>")
+        document.write("<h3>FullName : " + Person.fName, " " +Person.LName + "</h3>")
+
+        // Access the properties of an Nested object
+        document.write("<h3>Address : ", Person.address.city, "</h3>")
+        document.write("<h3>Address : ", Person.address.state ,"</h3>")
+        document.write("<h3>Address : ", Person.address.street, "</h3>")
+        document.write("<h3>Address : ", Person.address.PinCode, "</h3>")
+
+        // its display the all properties Keys
+        for (let prop in Person){
+            console.log(prop)
+        }
+
+        // its display the all properties Values
+         for (let prop in Person){
+            console.log(Person[prop])
+        }
+
+        for (let prop in Person){
+            console.log(prop + ":", + Person[prop])
+        }
+
+        // Create the object using "new" keyword
+        document.write("<hr>")
+        document.write("Create the object using ' new ' keyword")
+
+        const user = new Object();
+
+        user.id = 123,
+        user.name = "Raji",
+        user.email = "raji@gmail.com",
+        user.age = 22,
+        user.salary = 15000
+
+        document.write("<br>")
+        console.log(user)
+        document.write("<h3> User  id : ", user.id ,"</h3>")
+        document.write("<h3> User  Name : ", user.name ,"</h3>")
+        document.write("<h3> User  Email : ", user.email ,"</h3>")
+        document.write("<h3> User  Age : ", user.age ,"</h3>")
+        document.write("<h3> User  Salary : ", user.salary ,"</h3>")
+
+        // Object Method
+        document.write("<hr>");
+        document.write("create method in object <br>");
+
+        // Method declare the inside the object
+        const emp = {
+            empId : "4567",
+            name : "Aishu",
+            email : "aishu@gmail.com",
+            age : 22,
+            salary : 15000,
+            greet : function greet(){
+                document.write("<h3>Hello World..!</h3>");  // Here we are give the value as function definition called object method 
+
+            }
+        }
+        emp.greet()
+
+         // Method declare the outside the object
+         const emp1 = {
+            empId : "4567",
+            name : "Aishu",
+            email : "aishu@gmail.com",
+            age : 22,
+            salary : 15000,
+
+        }
+        function greet(){
+            document.write("<h3>Hello JavaScript..!</h3>"); 
+        }
+
+        emp1.greeting = greet()
+        emp1.greeting
+
+    // Method declare the inside the object without function name
+
+    const emp2 = {
+            empId : "4567",
+            name : "Aishu",
+            email : "aishu@gmail.com",
+            age : 22,
+            salary : 15000,
+            greet()  {
+                document.write("<h3>Hello Python World..!</h3>"); 
+            }
+        }
+
+        emp2.greet();
+
+
+    // "This" keyword
+
+    document.write("<hr>")
+    document.write("<p>' This ' keyword </p>")
+
+    const emp3 = {
+            empId : "4567",
+            name : "Aishu",
+            email : "aishu@gmail.com",
+            age : 22,
+            salary : 15000,
+            greet: function()  {
+                document.write("<h3>Hello ", + this.name ," Welcome to Python World..!</h3>"); 
+            }
+        }
+
+        emp3.greet();
+
+        // Constructor => its used to create the object
+        
+
+        function MyFunction(){
+            this.Fname = "Keerthi",
+            this.Lname = "Suresh"
+        }
+
+        // we create object from constructor using new keyword
+        //  we are create the multiple object using same constructor
+
+        const MyFunction1 = new MyFunction();
+
+        const MyFunction2 = new MyFunction();
+
+        console.log(MyFunction1)
+
+        function MyFunctionNext(first, last){
+            this.Fname = first,
+            this.Lname = last
+        }
+
+        const MyFunction3 = new MyFunctionNext("keerthi", "suresh");
+
+        // add a new property in the object
+
+        MyFunction3.age = 23;
+        console.log(MyFunction3)
+
+        // assign the method in the object
+
+        MyFunction3.greet = function(){
+            console.log("Hello.................!")
+        }
+
+        MyFunction3.greet();
+
+
+
+
+
+        
+
+
+
+        
+
+
+
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</html>
