@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conditional</title>
+</head>
+<body>
+    <script>
+        // Conditional statement
+
+        // 1. if condition
+
+       
+
+        let age = 20;
+        let start = "India";
+
+        if(age >= 18 && start == "India"){
+            console.log("You are eligible driver license ")
+
+        }
+
+        // 2. else if condition
+
+        if(age >= 18 && start == "India"){
+            console.log("You are eligible driver license")
+
+        }
+        else{
+            console.log("You are not eligible driver license")
+        }
+
+        // 3. if else if statement
+
+        let a = 10;
+
+        if(a > 20){
+            console.log("Your are a adult")
+        }
+        else if(a >= 14){
+            console.log("Your are a teenager")
+        }
+        else{
+            console.log("Your are a Minor")
+        }
+
+        // 3. switch statement
+
+        let day = 7;
+
+        switch(day)
+        {
+            case 1:
+                day = "Sunday";
+                break;
+            
+            case 2:
+                day = "Monday";
+                break;
+            
+            case 3:
+                day = "Tuesday";
+                break;
+            
+            case 4:
+                day = "Wednesday";
+                break;
+            
+            case 5:
+                day = "Thursday";
+                break;
+
+            case 6:
+                day = "Friday";
+                break;
+            
+            case 7:
+                day = "Saturday";
+                break;
+            
+            default:
+                day: "Invalid value"
+                break;
+
+        }
+
+        console.log("The day is: " + day);
+           
+
+    let value =[];
+
+    switch(typeof  value){
+        case "number":
+            console.log("Number");
+            break;
+
+        case "string":
+            console.log("String");
+            break;
+
+        case "boolean":
+            console.log("Boolean");
+            break;
+
+        case "object":
+            console.log("Object");
+            break;
+
+       default:
+            console.log("Other");
+            break;
+    }  
+
+    // Ternary operator
+
+    let age1 = 20;
+
+   //  condition ? value_is_True : value_is_False;
+
+    (age1 >= 58) ? console.log("You are an adult") :  console.log("You are an Minor") 
+
+    </script>
+</body>
+</html>
