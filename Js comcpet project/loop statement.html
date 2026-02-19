@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping</title>
+</head>
+<body>
+    <script>
+
+        console.log("for loop")
+        // 1. for loop
+
+        // syntax
+        // for(initialization, condition, Increment/Decrement){
+            
+        //}
+
+        // Ex
+
+        let code = ["Js", "Python", "C"]
+        for(let i = 0; i < code.length; i++){
+            console.log(code[i])
+        }
+
+        for (let i = 1; i <= 5; i++){
+            console.log(i)
+
+            for(let j = 1; j<=3; j++){
+                console.log("Inner Loop ", j)
+            }
+        }
+
+        console.log("while loop")
+        // while loop
+
+        /* Syntax
+
+         initialization
+         while(condition){
+             statement
+              increment/decrement
+         } */
+
+         let  i = 1;
+
+         while(i<=10){
+            console.log(i)
+            i++
+         }
+         console.log("Do while loop")
+
+
+    // Do while Loop
+
+     /* Syntax
+
+         initialization
+         do{
+             statement
+              increment/decrement
+    } while(condition)*/
+
+    let x = 1;
+
+    do{
+        console.log(x);
+        x++;
+    }while(x<=10)
+
+console.log("Break statement")
+        
+
+for(let i = 1; i <= 5; i++){
+    
+    if(i==4){
+        break;
+    }
+    console.log(i)
+}
+
+console.log("continue statement")
+        
+
+for(let i = 1; i <= 5; i++){
+    
+    if(i==4){
+        continue;
+    }
+    console.log(i)
+}
+
+console.log("for in uses to display object inside the property");
+
+let ii = ["Raji", "Aishu", "Keerthana", "Chandu", "Kavya"]
+
+for(x in ii){
+    console.log(x)
+}
+
+console.log("for of used to loop through value of an iterable objects");
+
+let flouts = ["Apple", "Mango","Kivvi"]
+
+for(let name of flouts){
+    console.log(name)
+}
+
+    </script>
+</body>
+</html>

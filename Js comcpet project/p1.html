@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h1 style="text-align: center;">Sum of the two Numbers</h1>
+
+
+    <form action="off">
+       <div>
+            <label for="text">Enter first Number</label>
+            <input type="text" name="number" id="firstNumber">
+       </div>
+        
+        <br><br>
+
+        <div>
+            <label for="text">Enter Second Number</label>
+            <input type="text" name="number" id="secondNumber">
+        </div>
+
+        <br><br>
+
+        <div>
+            <label for="sum">Sum is</label>
+            <input type="text" name="number" id="result">
+        </div>
+
+        <br><br>
+        <button type="button" onclick="cal()">Click Here</button>
+
+
+
+    </form> 
+
+        <script>
+        
+            function cal(){
+                let a = Number(document.getElementById('firstNumber').value);
+                let b = Number(document.getElementById('secondNumber').value);
+
+                let c = a + b;
+                console.log(c);
+                document.getElementById('result').value = c;   
+            }
+
+
+
+
+
+
+        </script>
+</body>
+</html>

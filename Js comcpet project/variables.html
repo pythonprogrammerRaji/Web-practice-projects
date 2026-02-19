@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <script>
+
+        // var  
+        var a = 10
+        console.log("This is a var keyword value",a)
+
+
+        // let => When we declare var using let keyword in function its only in within a function not outside anything
+
+        let x = 10
+       
+        if(x>5){
+            let y = 20
+            console.log(y)
+            console.log(x)
+        }
+        console.log(x)
+
+
+        // const => const keyword we can declare value only one time because constant means only one time 
+        const b = 30
+        // b = 60
+        console.log(b)
+
+
+        console.log("Scope of variables")
+
+        // Scope Variables  => There 3 types of variables
+
+        // 1) Global Scope => we are declare value of the variable and we visible anywhere in program
+
+        let z = 10
+        console.log("Its a global Scope",z)
+
+        function msg(){
+            console.log("Its call a inside function",z)
+        }
+        msg()
+
+        function ex(){
+            if(x>5){
+                console.log("Its call a inside condition statements",z)
+            }
+        }
+        ex()
+
+        // Function Scope => we are declare value of the variable in side the function, its visible only within the function or call the inside the function only
+
+        function getDate(){
+            let name = 10
+            console.log("Its a function scope", name)
+        }
+        
+        getDate()
+
+        console.log("Its a outside declare the function scope", name)
+         
+
+        // Block Scope => Block of scope is we are declare the value of the variable inside the block code, its visible only inside the block only, we are write the block of code using ({})
+        
+        function ex(){
+            if(x>5){
+                let c = 420
+                console.log("its a block scope",c)
+            }
+        }
+        ex()
+        // console.log("its a block scope",c)
+    </script>
+</body>
+</html>

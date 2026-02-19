@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing Elements</title>
+</head>
+<body>
+    <div class="title">
+        <h1 class="text">Welcome to My World</h1>
+    </div>
+
+   <div class="parent">
+        <p>Welcome to js 1</p>
+        <p class="second">Welcome to js 2</p>
+        <p>Welcome to js 3</p>
+        <p>Welcome to js 4</p>
+   </div>
+
+    <script>
+        // using child element we are trace the parent element 
+        // using p elements we are trace the div element
+
+        let txt = document.querySelector(".text");
+        console.log(txt.parentElement)
+
+        // Getting Child Elements of a node in javascript
+
+        let parent = document.querySelector(".parent");
+        
+        console.log(parent.firstElementChild) // => its return first paragraph tag
+        console.log(parent.lastElementChild) // => its return last paragraph tag
+        console.log(parent.childNodes) // => its return all paragraph tag
+
+        // select the next siblings, previous siblings of an elements
+
+        let second = document.querySelector(".second");
+        console.log(second.previousElementSibling)
+        console.log(second.nextElementSibling)
+        
+        
+        
+
+
+
+
+    </script>
+</body>
+</html>
