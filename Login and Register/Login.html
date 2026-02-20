@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="form" method="post">
+           <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email" id="email" onkeyup="validateEmail()">
+            </div>
+            <span id="email-error"></span>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" id="password" onkeyup="validatePassword()">
+                <input type="checkbox" id="showPass" onchange="togglePassWord()"><small for="showPass">Show</small>
+            </div>
+            <span id="pass-error"></span>
+            
+            <div class="check">
+                <label for=""><input type="checkbox">Remember Me</label>
+                <a href="">Forget Password</a>
+            </div>
+            <p id="all-item"></p>
+            <button type="submit" class="btn" onclick="validateForm()">Login</button>
+
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+
+        </form>
+    </div>
+
+    <script>
+        let emailError = document.getElementById("email-error");
+        let passError = document.getElementById("pass-error");
+
+        function validateEmail(){
+            let email = document.getElementById("email").value;
+            let email_check = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/
+
+            if(email.length == 0){
+                emailError.innerHTML = "Email is required";
+                return false;
+            }
+            if(!email.match(email_check)){
+                emailError.innerHTML = 'Enter valid email';
+                return false;
+            }
+            emailError.innerHTML = "<span class='valid'>Email is valid</span>";
+            return true;
+        }
+
+        function validatePassword(){
+            let password = document.getElementById("password").value;
+
+            if(password.length == 0){
+                passError.innerHTML = "Password is required"
+                return false;
+            }
+
+            if(password.length <= 5){
+                passError.innerHTML = "Password at least 8 digits"
+                return false;
+            }
+
+            if(password.length <= 8){
+                passError.innerHTML = "<span class='valid'>Password is valid</span>";
+                return true;
+            }
+        }
+
+       function togglePassWord(){
+        let password = document.getElementById("password");
+        let checkBox = document.getElementById("showPass");
+
+        password.type = checkBox.checked ? "text" : "password"; 
+        password.classList.add("show");
+       }
+
+      function validateForm(){
+        if(!validateEmail() || !validatePassword()){
+            let allItems = document.getElementById("all-item");
+            allItems.style.display = "block"
+            allItems.innerHTML = "Please Fill all details";
+
+            setTimeout(() => {
+                allItems.style.display = "none"
+            }, 3000);
+        }
+
+        if(email.length < 20 && password < 10){
+            window.location.assign("home.html");
+        }
+    }
+
+
+
+    </script>
+</body>
+</html>

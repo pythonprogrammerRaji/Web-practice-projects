@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="form" method="post">
+            <div class="input-box">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" name="username" placeholder="Username" id="username" required>
+            </div>
+            <span id="user-error"></span>
+
+           <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" name="email" placeholder="Email" id="email" required>
+            </div>
+            <span id="email-error"></span>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" placeholder="Password" id="password" required>
+                <input type="checkbox" id="showPass" onchange="togglePassWord()"><small for="showPass">Show</small>
+            </div>
+            <span id="pass-error"></span>
+
+            <div class="input-box">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" name="password" placeholder="Conform password" id="conform-password" readonly>
+                <input type="checkbox" id="showPass" onchange="toggleConformPassWord()"><small for="showPass">Show</small>
+            </div>
+            <span id="conform-error"></span>
+            
+            <p id="all-item"></p>
+            <button type="button" class="btn" onclick="validateForm()">Register</button>
+
+
+            <p>Don't have an account? <a href="Login.html">Login</a></p>
+
+        </form>
+    </div>
+
+    <script>
+        // password show the password or hide the password
+    function togglePassWord(){
+        let password = document.getElementById("password");
+        let checkBox = document.getElementById("showPass");
+
+        password.type = checkBox.checked ? "text" : "password"; 
+        password.classList.add("show");
+       }
+
+         // conformPassword show the password or hide the password
+       function toggleConformPassWord(){
+        let conformPassword = document.getElementById("conform-password");
+        let checkBox = document.getElementById("showPass");
+
+        conformPassword.type = checkBox.checked ? "text" : "password"; 
+        conformPassword.classList.add("show");
+       }
+
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let conformPassword = document.getElementById("conform-password").value;
+        let emailError = document.getElementById("email-error");
+        let userError = document.getElementById("user-error");
+        let passError = document.getElementById("pass-error");
+        let conformError = document.getElementById("conform-error")
+
+
+        function validateForm(){
+            if(username.length == 0){
+                userError.innerHTML = "username is required"
+            }
+        }
+        
+    </script>
+</body>
+</html>
